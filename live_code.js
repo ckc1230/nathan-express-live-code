@@ -30,6 +30,8 @@ var userSchema = new mongoose.Schema({
 });
 
 var User = mongoose.model("User", userSchema);
+// module.exports.User = User; // export User model for use in other files
+
 
 // // Create `seed.js` to populate database with a user:
 // -----------------------
