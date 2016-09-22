@@ -1,6 +1,9 @@
 // HELLO WDI32!
 
-// NPM
+/*
+ * NPM Setup
+ */
+
 // # make `package.json` file
 // > echo '{}' > package.json
 // > npm install --save express
@@ -9,7 +12,10 @@
 // # Git Ignore node_modules folder:
 // > echo 'node_modules' > .gitignore
 
-// Database
+/*
+ * DATABASE
+ */
+
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/contact_list_app"); // connect (make sure to run `mongod` command!)
 
@@ -36,9 +42,28 @@ var User = mongoose.model("User", userSchema);
 //   if (err) { return console.log(err); }
 //   console.log("Success, created user!")
 // });
+// ------------------------------
 
 // User.find({}, function(err, users){
 //   console.log("There are", users.length, "users")
 // })
-// ------------------------------
 
+/*
+ * EXPRESS
+ */
+
+
+var express = require('express');
+var app = express();
+
+// Routes + Controller Actions
+
+// User JSON API Endpoints
+
+app.get('/users', function userIndex(req, res) {
+
+  res.send("<h1>SANTITY CHECK!!!</h1>");
+
+});
+
+app.listen(3000);
