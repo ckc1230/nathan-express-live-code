@@ -46,13 +46,10 @@ var User = mongoose.model("User", userSchema);
 // });
 // ------------------------------
 
-// User.find({}, function(err, users){
-//   console.log("There are", users.length, "users")
-// })
 
-/*
- * EXPRESS
- */
+// /*
+//  * EXPRESS
+//  */
 
 
 var express = require('express');
@@ -60,11 +57,25 @@ var app = express();
 
 // Routes + Controller Actions
 
-// User JSON API Endpoints
+// HTML Endpoints
+app.get('/', function homepage(req, res){
+  res.sendFile(__dirname + '/index.html'); // absolute path to html file
+});
 
-app.get('/users', function userIndex(req, res) {
+/*
+ * Example HTML file
+ * > touch index.html
+ *
+ * <h1>Sanity Check</h1>
+ */
 
-  res.send("<h1>SANTITY CHECK!!!</h1>");
+
+// JSON API Endpoints
+app.get('/api/users', function userIndex(req, res) {
+
+  User.find({}, function(err, users){
+    res.json(users);
+  })
 
 });
 
