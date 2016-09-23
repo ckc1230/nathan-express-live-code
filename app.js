@@ -8,7 +8,7 @@
 // > echo '{}' > package.json
 // > npm install --save express
 // > npm install --save mongoose
-
+//
 // # Git Ignore node_modules folder:
 // > echo 'node_modules' > .gitignore
 
@@ -63,15 +63,15 @@ app.get('/', function homepage(req, res){
 });
 
 /*
- * Example HTML file
+ * Example HTML file:
  * > touch index.html
- *
+ * -----------------------
  * <h1>Sanity Check</h1>
- */
+ * -----------------------
 
 /*
- * Example public/javascripts/app.js file
- *
+ * Example public/javascripts/app.js file:
+ * -----------------------
  * $.ajax({
  * method: "GET",
  *   url: "/api/users/" + ONE_USER_ID,
@@ -79,6 +79,7 @@ app.get('/', function homepage(req, res){
  *    $("body").append(data.name);
  *   }
  * })
+ * -----------------------
  */
 
 
