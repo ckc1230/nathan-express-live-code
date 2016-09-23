@@ -69,14 +69,30 @@ app.get('/', function homepage(req, res){
  * <h1>Sanity Check</h1>
  */
 
+/*
+ * Example public/javascripts/app.js file
+ *
+ * $.ajax({
+ * method: "GET",
+ *   url: "/api/users/" + ONE_USER_ID,
+ *   success: function(){
+ *    $("body").append(data.name);
+ *   }
+ * })
+ */
+
 
 // JSON API Endpoints
 app.get('/api/users', function userIndex(req, res) {
-
   User.find({}, function(err, users){
     res.json(users);
   })
+});
 
+app.get('/api/users/:id', function showIndex(req, res) {
+  User.findOne({_id: req.params.id}, function(err, user){
+    res.json(user);
+  })
 });
 
 app.listen(3000);

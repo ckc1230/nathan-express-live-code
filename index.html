@@ -1,1 +1,26 @@
-<h1>Sanity Check</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Contacts</title>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Sanity Check</h1>
+
+  <script>
+    // I am a terrrrbile person
+    // this should be in public/assets/javascripts/app.js
+
+    $(document).ready(function(){
+      $.ajax({
+        method: "GET",
+        url: "/api/users/" + "57e465585502510d87d7607b",
+        success: function(data){
+           $("body").append(data.name)
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
